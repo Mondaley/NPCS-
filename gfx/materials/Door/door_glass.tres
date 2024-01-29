@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://1l082r6gtc2f"]
+
+[ext_resource type="Texture2D" uid="uid://dl1rrrkudkvyp" path="res://gfx/materials/Door/untitled_Front door.png" id="1_ymkan"]
+[ext_resource type="Texture2D" uid="uid://ba0wy5mop48aj" path="res://gfx/materials/Door/Front door spec.jpg" id="2_o2fqe"]
+
+[resource]
+resource_name = "door_frame_glass"
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.270588)
+albedo_texture = ExtResource("1_ymkan")
+metallic = 1.0
+metallic_specular = 0.42
+metallic_texture = ExtResource("2_o2fqe")
+roughness = 0.22
+refraction_enabled = true
+refraction_scale = -0.03

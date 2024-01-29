@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmmlqmef2ha8x"]
+
+[ext_resource type="Script" path="res://scripts/entities/player/player.gd" id="1_ivc46"]
+[ext_resource type="Script" path="res://scripts/entities/player/camera.gd" id="2_2wo30"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s725m"]
+height = 1.0
+radius = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_piumi"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_ivc46")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_s725m")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_piumi")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879991, 0)
+script = ExtResource("2_2wo30")
+
+[node name="Neck" type="Node3D" parent="Head"]
+
+[node name="Camera" type="Camera3D" parent="Head/Neck"]
+
+[node name="Ray" type="RayCast3D" parent="Head/Neck/Camera"]
+
+[node name="Slot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Slot"]
+omni_range = 1.93168
