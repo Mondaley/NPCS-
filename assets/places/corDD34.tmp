@@ -1,0 +1,175 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy2chvgxscgm4"]
+
+[ext_resource type="PackedScene" uid="uid://dm4i7qu3tf6ly" path="res://assets/environment/building/plane.tscn" id="1_6e2lv"]
+[ext_resource type="Material" uid="uid://iejc7j7smvvp" path="res://visuals/materials/Wood_Planks/Wood_Planks.tres" id="2_dtgtx"]
+[ext_resource type="PackedScene" uid="uid://dmmlqmef2ha8x" path="res://assets/entities/player.tscn" id="2_xd6gm"]
+
+[node name="world" type="Node3D"]
+
+[node name="building" type="Node3D" parent="."]
+
+[node name="Planks" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149393, -0.00948304, -0.0220501)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks2" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149393, -0.00948304, 1.97795)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks2" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks7" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149393, -0.00948304, -4.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks7" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks11" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00149393, -0.00948304, -6.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks11" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks12" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.00149, -0.00948304, -6.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks12" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks13" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.00149, -0.00948304, -6.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks13" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks14" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.00149, -0.00948304, -6.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks14" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks15" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.99851, -0.00948304, -10.022)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks15" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks16" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.99851, -0.00948304, -10.022)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks16" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks8" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149393, -0.00948304, -2.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks8" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks17" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149393, -0.00948304, -8.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks17" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks18" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149393, -0.00948304, -10.022)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks18" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks19" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149393, -0.00948304, -12.022)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks19" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks20" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149393, -0.00948304, -14.022)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks20" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks9" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.99851, -0.00948304, -2.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks9" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks10" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.99851, -0.00948304, -2.02205)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks10" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks3" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00149393, -0.00948304, 3.97795)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks3" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks4" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.00149, -0.00948304, 3.97795)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks4" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks5" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.00149, -0.00948304, 3.97795)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks5" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="Planks6" parent="building" instance=ExtResource("1_6e2lv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.00149, -0.00948304, 3.97795)
+script = null
+
+[node name="MeshInstance3D" parent="building/Planks6" index="0"]
+material_override = ExtResource("2_dtgtx")
+
+[node name="entities" type="Node3D" parent="."]
+
+[node name="Player" parent="entities" instance=ExtResource("2_xd6gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.12254, 0)
+
+[editable path="building/Planks"]
+[editable path="building/Planks2"]
+[editable path="building/Planks7"]
+[editable path="building/Planks11"]
+[editable path="building/Planks12"]
+[editable path="building/Planks13"]
+[editable path="building/Planks14"]
+[editable path="building/Planks15"]
+[editable path="building/Planks16"]
+[editable path="building/Planks8"]
+[editable path="building/Planks17"]
+[editable path="building/Planks18"]
+[editable path="building/Planks19"]
+[editable path="building/Planks20"]
+[editable path="building/Planks9"]
+[editable path="building/Planks10"]
+[editable path="building/Planks3"]
+[editable path="building/Planks4"]
+[editable path="building/Planks5"]
+[editable path="building/Planks6"]

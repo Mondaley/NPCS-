@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy2chvgxscgm4"]
+
+[ext_resource type="PackedScene" uid="uid://dm4i7qu3tf6ly" path="res://assets/environment/building/plane.tscn" id="2_kfgoh"]
+[ext_resource type="PackedScene" uid="uid://dmmlqmef2ha8x" path="res://assets/entities/player.tscn" id="2_xd6gm"]
+[ext_resource type="PackedScene" uid="uid://dhhaa3ufjpe76" path="res://assets/environment/building/plane_large_door.tscn" id="4_42x80"]
+[ext_resource type="PackedScene" uid="uid://sy76jn0ifay2" path="res://assets/environment/building/large_door.tscn" id="5_t7jiv"]
+
+[node name="world" type="Node3D"]
+
+[node name="building" type="Node3D" parent="."]
+
+[node name="Floor" parent="building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
+
+[node name="Floor2" parent="building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="Floor3" parent="building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="Floor4" parent="building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Floor5" parent="building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Floor6" parent="building" instance=ExtResource("2_kfgoh")]
+
+[node name="entities" type="Node3D" parent="."]
+
+[node name="Player" parent="entities" instance=ExtResource("2_xd6gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.12254, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99829, 0.995866, 4.60286)
+light_color = Color(0.384314, 1, 1, 1)
+omni_range = 2.14441
+
+[node name="large_door" parent="." instance=ExtResource("5_t7jiv")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -7, 0, 4)
+
+[node name="Plane_Large-door" parent="." instance=ExtResource("4_42x80")]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -7, 1, 4)
+
+[node name="coin" parent="." instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coin"]
+
+[editable path="coin"]
