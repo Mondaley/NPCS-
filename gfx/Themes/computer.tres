@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ohxsqgyjq13h"]
+
+[ext_resource type="FontFile" uid="uid://d3cxewrydnr42" path="res://gfx/font text/5Computers-In-Love.ttf" id="1_66pi5"]
+
+[resource]
+default_font = ExtResource("1_66pi5")
+Label/colors/font_color = Color(0.862745, 0.976471, 0.858824, 1)

@@ -1,0 +1,175 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkcsps8eqi4h1"]
+
+[ext_resource type="Script" path="res://scripts/places/computer.gd" id="1_b02fa"]
+[ext_resource type="Theme" uid="uid://ohxsqgyjq13h" path="res://gfx/Themes/computer.tres" id="1_osnqr"]
+[ext_resource type="Texture2D" uid="uid://b8cmaw7xnpp8i" path="res://gfx/overlays/old_computer_overlay.png" id="2_1mwv8"]
+[ext_resource type="Shader" path="res://gfx/Shader/office.gdshader" id="3_scvln"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxxjn"]
+shader = ExtResource("3_scvln")
+shader_parameter/offset = 0.0
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.039
+shader_parameter/scanlines_width = 0.066
+shader_parameter/grille_opacity = 0.307
+shader_parameter/resolution = Vector2(160, 120)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 6.299
+shader_parameter/roll_variation = 3.459
+shader_parameter/distort_intensity = 0.041
+shader_parameter/noise_opacity = 0.11
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.03
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 2.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 4.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 1.5
+shader_parameter/vignette_opacity = 0.256
+
+[node name="computer" type="Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b02fa")
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+color = Color(0.0117647, 0.0784314, 0.0117647, 1)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ColorRect" type="ColorRect" parent="AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.76
+color = Color(0.0627451, 0.219608, 0.0627451, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 470.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 100
+
+[node name="Label" type="Label" parent="AspectRatioContainer/VBoxContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_osnqr")
+theme_override_font_sizes/font_size = 34
+text = "Pest Identification and Removal Service"
+
+[node name="ColorRect3" type="ColorRect" parent="AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.39
+color = Color(0.443137, 0.670588, 0.443137, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.55
+theme_override_constants/separation = 0
+
+[node name="ColorRect4" type="ColorRect" parent="AspectRatioContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+color = Color(0.0627451, 0.219608, 0.0627451, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.443137, 0.670588, 0.443137, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="AspectRatioContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.0627451, 0.219608, 0.0627451, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+color = Color(0.443137, 0.670588, 0.443137, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="AspectRatioContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+color = Color(0.0627451, 0.219608, 0.0627451, 1)
+
+[node name="overlays" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="overlay" type="TextureRect" parent="overlays"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1mwv8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_nxxjn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.466667, 0.466667, 1)
