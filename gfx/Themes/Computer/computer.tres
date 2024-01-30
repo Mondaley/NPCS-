@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ohxsqgyjq13h"]
+
+[ext_resource type="StyleBox" uid="uid://b1hmdhg0o8gkg" path="res://gfx/Themes/Computer/style_box_flat_hover.tres" id="2_3gy3n"]
+[ext_resource type="StyleBox" uid="uid://c3uskh7lsp0hj" path="res://gfx/Themes/Computer/style_box_flat_normal.tres" id="2_3lima"]
+[ext_resource type="StyleBox" uid="uid://l4eqx03qjjqj" path="res://gfx/Themes/Computer/style_box_flat_focus.tres" id="2_dj5ye"]
+[ext_resource type="FontFile" uid="uid://d3cxewrydnr42" path="res://gfx/font text/5Computers-In-Love.ttf" id="2_x6b8v"]
+[ext_resource type="FontFile" uid="uid://5gq3f7u10u8v" path="res://gfx/font text/Filetto_regular.ttf" id="4_gqt44"]
+[ext_resource type="StyleBox" uid="uid://e3j2ex7ct3w5" path="res://gfx/Themes/Computer/style_box_flat_press.tres" id="5_8jgs1"]
+
+[resource]
+default_font = ExtResource("2_x6b8v")
+Button/colors/font_color = Color(0.443137, 0.670588, 0.443137, 1)
+Button/colors/font_focus_color = Color(0.0627451, 0.219608, 0.0627451, 1)
+Button/colors/font_hover_color = Color(0.0627451, 0.219608, 0.0627451, 1)
+Button/colors/font_pressed_color = Color(0.862745, 0.976471, 0.858824, 1)
+Button/fonts/font = ExtResource("4_gqt44")
+Button/styles/focus = ExtResource("2_dj5ye")
+Button/styles/hover = ExtResource("2_3gy3n")
+Button/styles/normal = ExtResource("2_3lima")
+Button/styles/pressed = ExtResource("5_8jgs1")
+Label/colors/font_color = Color(0.862745, 0.976471, 0.858824, 1)
+Label/fonts/font = ExtResource("4_gqt44")
+Panel/styles/panel = ExtResource("2_3lima")
+RichTextLabel/colors/default_color = Color(0.862745, 0.976471, 0.858824, 1)
+RichTextLabel/fonts/normal_font = ExtResource("4_gqt44")
+VScrollBar/styles/grabber = ExtResource("2_3gy3n")
+VScrollBar/styles/grabber_highlight = ExtResource("2_3gy3n")
+VScrollBar/styles/grabber_pressed = ExtResource("2_3lima")

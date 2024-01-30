@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkcsps8eqi4h1"]
+[gd_scene load_steps=8 format=3 uid="uid://dkcsps8eqi4h1"]
 
 [ext_resource type="Script" path="res://scripts/places/computer.gd" id="1_b02fa"]
-[ext_resource type="Theme" uid="uid://ohxsqgyjq13h" path="res://gfx/Themes/computer.tres" id="1_osnqr"]
+[ext_resource type="Theme" uid="uid://ohxsqgyjq13h" path="res://gfx/Themes/Computer/computer.tres" id="1_osnqr"]
 [ext_resource type="Texture2D" uid="uid://b8cmaw7xnpp8i" path="res://gfx/overlays/old_computer_overlay.png" id="2_1mwv8"]
+[ext_resource type="PackedScene" uid="uid://cprnkv7pb820m" path="res://scenes/ui/button.tscn" id="3_egv6t"]
 [ext_resource type="Shader" path="res://gfx/Shader/office.gdshader" id="3_scvln"]
+[ext_resource type="AudioStream" uid="uid://b3ept7qpfrght" path="res://sfx/places/computer/old_computer.wav" id="6_c6ksp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nxxjn"]
 shader = ExtResource("3_scvln")
@@ -72,27 +74,27 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.76
+size_flags_stretch_ratio = 1.25
 color = Color(0.0627451, 0.219608, 0.0627451, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer/ColorRect"]
+[node name="Label" type="Label" parent="AspectRatioContainer/VBoxContainer/ColorRect"]
+layout_direction = 2
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 470.0
-offset_bottom = 20.0
-grow_vertical = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 100
-
-[node name="Label" type="Label" parent="AspectRatioContainer/VBoxContainer/ColorRect/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -453.5
+offset_top = -67.0
+offset_right = 453.5
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.01544, 1.02082)
+size_flags_vertical = 1
 theme = ExtResource("1_osnqr")
-theme_override_font_sizes/font_size = 34
-text = "Pest Identification and Removal Service"
+theme_override_font_sizes/font_size = 38
+text = "   Pest Identification and Removal Service"
 
 [node name="ColorRect3" type="ColorRect" parent="AspectRatioContainer/VBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -114,8 +116,101 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.3
+size_flags_stretch_ratio = 0.55
 color = Color(0.0627451, 0.219608, 0.0627451, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_osnqr")
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Button" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+stg_subject = "Cockroach Infestation Assistance Needed"
+stg_name = "David William"
+stg_statuts = "Customer"
+stg_decription = "Dear NPCS,
+
+I'm David William. i seek urgent help for a persistent cockroach infestation at home.
+
+Despite my efforts, the situation has escalated, and I believe your expertise is crucial. 
+
+Please schedule an inspection at your earliest convenience. I need details on services, costs, and any preparation required. 
+
+Your prompt response is appreciated. Looking forward to resolving this issue together.
+
+Phone Number: 550 923 113 654"
+
+[node name="Button2" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+stg_subject = "Immediate Assistance with Spider Infestation"
+stg_name = "Emily Lore"
+stg_statuts = "Customer"
+stg_decription = "Dear NPCS Team,
+
+My name is Emily Lore and I am seeking help with a severe spider infestation in my living space.
+
+Over the past weeks, their nuber has increased significantly, making me and my daughter move out to one of my relatives.
+
+Please contact me as quickly as you can. Thank you!
+
+Phone Number: 550 778 431 001"
+
+[node name="Button3" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+stg_subject = "Confidential Matter"
+stg_name = "..."
+stg_statuts = "Guverment"
+stg_decription = "NPCS,
+
+A lab subject, initially enclosed for research, has made its way out of our secure containment area. Its existence poses a significant threat to public safety. Strict confidentiality is mandatory. We request your immediate collaboration to contain and resolve this issue discreetly and efficiently. For further details, contact our representative tasked with this emergency for furder details at 998 113 931 000
+
+Thank you for your cooperation."
+
+[node name="Button4" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+
+[node name="Button5" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+
+[node name="Button6" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+
+[node name="Button7" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+
+[node name="Button8" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+
+[node name="Button9" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
+
+[node name="Button10" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
+layout_mode = 2
 
 [node name="ColorRect6" type="ColorRect" parent="AspectRatioContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -130,6 +225,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.0627451, 0.219608, 0.0627451, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.996758, 0.991769)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect5/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_osnqr")
+bbcode_enabled = true
 
 [node name="ColorRect7" type="ColorRect" parent="AspectRatioContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -146,21 +259,14 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 color = Color(0.0627451, 0.219608, 0.0627451, 1)
 
-[node name="overlays" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="overlay" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 122.4
+offset_right = 1029.6
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="overlay" type="TextureRect" parent="overlays"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_1mwv8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -172,4 +278,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0.466667, 0.466667, 1)
+
+[node name="sounds" type="Node" parent="."]
+
+[node name="mouse" type="AudioStreamPlayer" parent="sounds"]
+volume_db = -10.0
+bus = &"sfx"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource("6_c6ksp")
+volume_db = -5.0
+autoplay = true

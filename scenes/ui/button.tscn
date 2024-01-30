@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cprnkv7pb820m"]
+
+[ext_resource type="Theme" uid="uid://ohxsqgyjq13h" path="res://gfx/Themes/Computer/computer.tres" id="1_8tbax"]
+[ext_resource type="Script" path="res://scripts/places/button.gd" id="2_gpv3h"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(100, 70)
+scale = Vector2(1, 0.992901)
+size_flags_vertical = 0
+theme = ExtResource("1_8tbax")
+theme_override_font_sizes/font_size = 22
+script = ExtResource("2_gpv3h")
