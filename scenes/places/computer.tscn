@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkcsps8eqi4h1"]
+[gd_scene load_steps=11 format=3 uid="uid://dkcsps8eqi4h1"]
 
 [ext_resource type="Script" path="res://scripts/places/computer.gd" id="1_b02fa"]
 [ext_resource type="Theme" uid="uid://ohxsqgyjq13h" path="res://gfx/Themes/Computer/computer.tres" id="1_osnqr"]
 [ext_resource type="Texture2D" uid="uid://b8cmaw7xnpp8i" path="res://gfx/overlays/old_computer_overlay.png" id="2_1mwv8"]
+[ext_resource type="Script" path="res://scenes/places/ScrollContainer.gd" id="3_4llfs"]
 [ext_resource type="PackedScene" uid="uid://cprnkv7pb820m" path="res://scenes/ui/button.tscn" id="3_egv6t"]
 [ext_resource type="Shader" path="res://gfx/Shader/office.gdshader" id="3_scvln"]
+[ext_resource type="Script" path="res://scenes/places/Button.gd" id="5_ximna"]
 [ext_resource type="AudioStream" uid="uid://b3ept7qpfrght" path="res://sfx/places/computer/old_computer.wav" id="6_c6ksp"]
+[ext_resource type="PackedScene" uid="uid://dy2chvgxscgm4" path="res://scenes/places/coridors.tscn" id="9_duvq8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nxxjn"]
 shader = ExtResource("3_scvln")
@@ -131,9 +134,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer" node_paths=PackedStringArray("Head_Over_Button")]
 layout_mode = 2
 theme = ExtResource("1_osnqr")
+script = ExtResource("3_4llfs")
+Head_Over_Button = NodePath("../../../../../../Location Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer"]
 layout_mode = 2
@@ -291,3 +296,27 @@ bus = &"sfx"
 stream = ExtResource("6_c6ksp")
 volume_db = -5.0
 autoplay = true
+
+[node name="Location Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_top = -472.0
+offset_right = 448.0
+offset_bottom = -400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Head Over "
+flat = true
+script = ExtResource("5_ximna")
+Location = ExtResource("9_duvq8")
+
+[connection signal="scroll_ended" from="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer" to="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer" method="_on_scroll_ended"]
+[connection signal="scroll_started" from="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer" to="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer" method="_on_scroll_started"]
+[connection signal="pressed" from="Location Button" to="Location Button" method="_on_pressed"]

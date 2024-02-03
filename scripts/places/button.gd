@@ -2,6 +2,7 @@ extends Node
 
 signal sg_button_pressed
 
+
 @export_multiline var stg_subject := ""
 @export_multiline var stg_name := ""
 @export_multiline var stg_statuts := ""
@@ -19,3 +20,6 @@ func button_pressed():
 	owner.stg_statuts = stg_statuts
 	owner.stg_decription = stg_decription
 	emit_signal("sg_button_pressed")
+
+func _physics_process(delta):
+	get

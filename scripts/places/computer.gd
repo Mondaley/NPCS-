@@ -47,3 +47,7 @@ func play_sounds():
 	if Input.is_action_just_released("mouse_select"):
 		$sounds/mouse.stream = load("res://sfx/places/computer/click_release.wav")
 		$sounds/mouse.play()
+
+
+func _on_location_button_pressed():
+	pass # Replace with function body.
