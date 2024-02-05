@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy2chvgxscgm4"]
+[gd_scene load_steps=7 format=3 uid="uid://dy2chvgxscgm4"]
 
 [ext_resource type="PackedScene" uid="uid://dm4i7qu3tf6ly" path="res://scenes/environment/building/plane.tscn" id="2_kfgoh"]
 [ext_resource type="PackedScene" uid="uid://dmmlqmef2ha8x" path="res://scenes/entities/player/player.tscn" id="2_xd6gm"]
 [ext_resource type="PackedScene" uid="uid://dhhaa3ufjpe76" path="res://scenes/environment/building/plane_large_door.tscn" id="4_42x80"]
 [ext_resource type="PackedScene" uid="uid://sy76jn0ifay2" path="res://scenes/environment/building/large_door.tscn" id="5_t7jiv"]
+[ext_resource type="Script" path="res://scripts/building_generator.gd" id="5_wiilq"]
+
+[sub_resource type="Environment" id="Environment_6fqb1"]
 
 [node name="world" type="Node3D"]
 
@@ -41,3 +44,10 @@ transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -7
 
 [node name="Plane_Large-door" parent="." instance=ExtResource("4_42x80")]
 transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -7, 1, 4)
+
+[node name="GeneratedBuilding" type="Node3D" parent="."]
+transform = Transform3D(-0.93919, 0, -0.343397, 0, 1, 0, 0.343397, 0, -0.93919, 3.57186, -4.24661, 0)
+script = ExtResource("5_wiilq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6fqb1")
