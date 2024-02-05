@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NPCS-"
-run/main_scene="res://scenes/places/coridors.tscn"
+run/main_scene="res://scenes/places/computer.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -71,3 +71,7 @@ pointing/emulate_touch_from_mouse=true
 
 3d_render/layer_1="Default"
 3d_render/layer_2="Player"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
