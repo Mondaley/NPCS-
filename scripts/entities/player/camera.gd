@@ -14,7 +14,11 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
+<<<<<<< Updated upstream
 	# print(Engine.get_frames_per_second())
+=======
+	#print(Engine.get_frames_per_second())
+>>>>>>> Stashed changes
 	do_camera_mode(delta)
 
 func _input(_in_event):

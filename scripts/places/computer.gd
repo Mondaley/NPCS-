@@ -15,7 +15,7 @@ var stg_decription := ""
 	#Input.set_custom_mouse_cursor(stg_old_pc_cursor)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	random_brightness()
 	play_sounds()
 
