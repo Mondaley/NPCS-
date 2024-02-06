@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://byip2ppuktf33"]
+
+[ext_resource type="Script" path="res://scripts/environment/building/room_generation.gd" id="1_gn6qc"]
+
+[node name="Room_Generator" type="Node3D"]
+script = ExtResource("1_gn6qc")
+
+[node name="Borders" type="Node3D" parent="."]
+
+[node name="Empty" type="Node3D" parent="."]
+
+[node name="Rooms" type="Node3D" parent="."]
+
+[node name="Rooms" type="Node3D" parent="Rooms"]
+
+[node name="Borders" type="Node3D" parent="Rooms"]
+
+[node name="Empty" type="Node3D" parent="Rooms"]

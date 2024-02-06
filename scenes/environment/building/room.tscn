@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c11hipnejdugd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ctxss"]
+size = Vector2(1, 1)
+
+[node name="Room" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ctxss")
+
+[node name="Count" type="Label3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0.026, 0)
+text = "Blank"
+font_size = 64
+
+[node name="Coordinates" type="Label3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0.0257905, -0.360342)
+text = "Blank"
+font_size = 25
