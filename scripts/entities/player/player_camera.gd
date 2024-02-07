@@ -4,21 +4,18 @@ extends Node3D
 @onready var n_camera = $Neck/Camera
 @onready var n_mesh = owner.get_node("Mesh")
 
+var _v3_initial_pos := position
 var nr_angular_multiplier := 0.005
 var b_mouse_captured := true
 
 var in_event
 
 func _ready():
-	#Engine.max_fps = 30
+	#Engine.max_fps = 10
+	owner.connect("sg_crouch", do_camera_position)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
-#<<<<<<< Updated upstream
-	# print(Engine.get_frames_per_second())
-#=======
-	#print(Engine.get_frames_per_second())
-#>>>>>>> Stashed changes
 	do_camera_mode(delta)
 
 func _input(_in_event):
@@ -39,3 +36,10 @@ func do_camera_mode(_delta):
 		if n_camera.rotation.x < -1.5:	n_camera.rotation = Vector3(-1.5,0,0)
 		if n_camera.rotation.x > 1.5:	n_camera.rotation = Vector3(1.5,0,0)
 		in_event = null
+
+func do_camera_position(_b_crauching : bool = false):
+	if _b_crauching:
+		create_tween().tween_property(self, "position", _v3_initial_pos / 2, 0.1)
+	elif !_b_crauching:
+		create_tween().tween_property(self, "position", _v3_initial_pos, 0.1)
+		
