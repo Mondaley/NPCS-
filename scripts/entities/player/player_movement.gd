@@ -2,8 +2,6 @@ extends CharacterBody3D
 
 class_name c_player
 
-signal sg_crouch
-
 @onready var n_head = $Head
 
 #	debug
@@ -62,10 +60,8 @@ func do_movement(_amount_delta):
 func do_crouch():
 	if is_on_floor():
 		if Input.is_action_just_pressed("move_crouch"):
-			$Mesh.create_tween().tween_property(self, "scale", Vector3(1, 0.5, 1), 0.1)
-			$CollisionShape3D.create_tween().tween_property(self, "scale", Vector3(1, 0.5, 1), 0.1)
-			sg_crouch.emit(true)
+			$Mesh.create_tween().tween_property(self, "scale", Vector3(1, 0.6, 1), 0.1)
+			$CollisionShape3D.create_tween().tween_property(self, "scale", Vector3(1, 0.6, 1), 0.1)
 		elif Input.is_action_just_released("move_crouch"):
 			$Mesh.create_tween().tween_property(self, "scale", Vector3(1, 1, 1), 0.1)
 			$CollisionShape3D.create_tween().tween_property(self, "scale", Vector3(1, 1, 1), 0.1)			
-			sg_crouch.emit(false)

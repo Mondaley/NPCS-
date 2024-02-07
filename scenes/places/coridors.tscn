@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dy2chvgxscgm4"]
+[gd_scene load_steps=10 format=3 uid="uid://dy2chvgxscgm4"]
 
+[ext_resource type="Script" path="res://scripts/places/world.gd" id="1_kewoa"]
 [ext_resource type="PackedScene" uid="uid://dm4i7qu3tf6ly" path="res://scenes/environment/building/plane.tscn" id="2_kfgoh"]
 [ext_resource type="PackedScene" uid="uid://dmmlqmef2ha8x" path="res://scenes/entities/player/player.tscn" id="2_xd6gm"]
 [ext_resource type="PackedScene" uid="uid://dhhaa3ufjpe76" path="res://scenes/environment/building/plane_large_door.tscn" id="4_42x80"]
@@ -10,7 +11,10 @@
 
 [sub_resource type="Environment" id="Environment_6fqb1"]
 
-[node name="world" type="Node3D"]
+[node name="world" type="Node3D" node_paths=PackedStringArray("n_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00291395, 0.00603902, 0.000326633)
+script = ExtResource("1_kewoa")
+n_player = NodePath("entities/Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6fqb1")

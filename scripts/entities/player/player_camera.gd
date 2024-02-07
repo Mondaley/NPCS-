@@ -12,7 +12,6 @@ var in_event
 
 func _ready():
 	#Engine.max_fps = 10
-	owner.connect("sg_crouch", do_camera_position)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
@@ -36,10 +35,3 @@ func do_camera_mode(_delta):
 		if n_camera.rotation.x < -1.5:	n_camera.rotation = Vector3(-1.5,0,0)
 		if n_camera.rotation.x > 1.5:	n_camera.rotation = Vector3(1.5,0,0)
 		in_event = null
-
-func do_camera_position(_b_crauching : bool = false):
-	if _b_crauching:
-		create_tween().tween_property(self, "position", _v3_initial_pos / 2, 0.1)
-	elif !_b_crauching:
-		create_tween().tween_property(self, "position", _v3_initial_pos, 0.1)
-		

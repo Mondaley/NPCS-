@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cprnkv7pb820m"]
 
 [ext_resource type="Theme" uid="uid://ohxsqgyjq13h" path="res://gfx/Themes/Computer/computer.tres" id="1_8tbax"]
-[ext_resource type="Script" path="res://scripts/places/button.gd" id="2_gpv3h"]
+[ext_resource type="Script" path="res://scripts/ui/button.gd" id="2_gpv3h"]
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(100, 70)
