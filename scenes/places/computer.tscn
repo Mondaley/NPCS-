@@ -192,14 +192,14 @@ layout_mode = 2
 stg_subject = "Immediate Assistance with Housefly Infestation"
 stg_name = "Gregory Connor"
 stg_statuts = "Customer"
-stg_decription = "PIARS team I need your help with a housefly? infestaition they are outside of my window I think and they buzz to annoy me they keep doing it repeateadly and when my children are near me they say \"The window is telling me to come outside daddy!\" I don't know what THAT means or if there is some sort of pedophile outside my house but we are at another house so fix our fly problem NOW. Phone : 5413 434 4245"
+stg_decription = "PIARS team I need your help with a housefly? infestaition they are outside of my window I think and they buzz to annoy me they keep doing it repeateadly and when my children are near me they say \"The window is telling me to come outside daddy!\" I don't know what THAT means or if there is some sort of pedophile outside my house but we are at another house for now so fix our fly problem NOW. Phone : 5413 434 4245"
 
 [node name="Button6" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
 layout_mode = 2
 stg_subject = "Immediate Assistance with Racoon Infestation"
 stg_name = "Carol Vixen"
 stg_statuts = "Customer"
-stg_decription = "Hi PIARS my name is Carol Vixen and I need help. Me and my grandson are expierencing a problem with racoons they just mess up everything in our house eating our food and leaving some sort of black liquid everywhere. Please help our house. Number : 3213 345 8765"
+stg_decription = "Hi PIARS my name is Carol Vixen and I need help. Me and my grandson are expierencing a problem with racoons they just mess up everything in our house eating our food and leaving some sort of black liquid everywhere. Please help our house and exterminate those pesky racoons. Number : 3213 345 8765"
 
 [node name="Button7" parent="AspectRatioContainer/VBoxContainer/HBoxContainer/ColorRect4/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_egv6t")]
 layout_mode = 2

@@ -28,7 +28,7 @@ func do_movement(_amount_delta):
 	if Input.is_action_pressed("move_sprint"):
 		amount_sprint_speed = 1.4
 	elif Input.is_action_just_released("move_sprint"):
-		amount_sprint_speed = 1
+		amount_sprint_speed = 2
 	
 #	y-axis
 	if b_debug_mode:
