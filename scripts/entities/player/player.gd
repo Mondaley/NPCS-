@@ -26,7 +26,7 @@ func _physics_process(_amount_delta):
 func do_movement(_amount_delta):
 #	stats
 	if Input.is_action_pressed("move_sprint"):
-		amount_sprint_speed = 1.4
+		amount_sprint_speed = 1.6
 	elif Input.is_action_just_released("move_sprint"):
 		amount_sprint_speed = 2
 	

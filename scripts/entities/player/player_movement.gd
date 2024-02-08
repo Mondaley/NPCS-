@@ -14,16 +14,16 @@ class_name c_player
 @export var amount_g_movement_speed := 2.0:
 	get:
 		if Input.is_action_pressed("move_crouch"):
-			return amount_g_movement_speed * 0.5
+			return amount_g_movement_speed * 0.16
 		else:
 			return amount_g_movement_speed
-@export var amount_external_sprint_speed := 1.0
+@export var amount_external_sprint_speed := 1.1
 
 #	y-axis
 @export_group("Y-axis")
-@export var amount_jump_height = 1.5
-@export var amount_gravity := 9.8
-@export var amount_weight := 1.4
+@export var amount_jump_height = 1.1
+@export var amount_gravity := 9.2
+@export var amount_weight := 1.9
 
 
 func _physics_process(_amount_delta):

@@ -35,16 +35,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 
 [node name="Floor3" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41736, 0, 1.55442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97794, 2.38419e-07, 3.99786)
 
 [node name="Floor4" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.51295e-05, 4)
 
 [node name="Floor5" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09804, 0.00956345, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96756, 0.00210178, 4.00432)
 
 [node name="Floor6" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.21678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96602, 0, 4.02657)
 
 [node name="large_door" parent="Environment/Building" instance=ExtResource("5_t7jiv")]
 transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -7, 0, 4)
