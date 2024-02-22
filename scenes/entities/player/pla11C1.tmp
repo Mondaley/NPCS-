@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmmlqmef2ha8x"]
+
+[ext_resource type="Script" path="res://scripts/entities/player/player_movement.gd" id="1_onw3w"]
+[ext_resource type="Script" path="res://scripts/entities/player/player_camera.gd" id="2_ivi2c"]
+[ext_resource type="Script" path="res://scripts/entities/player/player_ui.gd" id="3_j25jt"]
+[ext_resource type="Theme" uid="uid://ohxsqgyjq13h" path="res://gfx/Themes/Computer/computer.tres" id="4_etl30"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s725m"]
+height = 1.0
+radius = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_piumi"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_onw3w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+rotation_edit_mode = 1
+shape = SubResource("CylinderShape3D_s725m")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("CylinderMesh_piumi")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879991, 0)
+script = ExtResource("2_ivi2c")
+
+[node name="Neck" type="Node3D" parent="Head"]
+
+[node name="Camera" type="Camera3D" parent="Head/Neck"]
+
+[node name="Ray" type="RayCast3D" parent="Head/Neck/Camera"]
+
+[node name="Slot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Slot"]
+omni_range = 1.93168
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_j25jt")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="sprint_bar" type="ProgressBar" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -25.0
+offset_right = 352.0
+offset_bottom = -21.0
+grow_vertical = 0
+theme = ExtResource("4_etl30")
+value = 100.0
+show_percentage = false
