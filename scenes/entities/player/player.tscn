@@ -5,9 +5,8 @@
 [ext_resource type="Script" path="res://scripts/entities/player/player_ui.gd" id="3_j25jt"]
 [ext_resource type="Theme" uid="uid://ohxsqgyjq13h" path="res://gfx/Themes/Computer/computer.tres" id="4_etl30"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_s725m"]
-height = 1.0
-radius = 0.2
+[sub_resource type="BoxShape3D" id="BoxShape3D_1lfvr"]
+size = Vector3(0.3, 1, 0.3)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_piumi"]
 top_radius = 0.2
@@ -21,7 +20,7 @@ script = ExtResource("1_onw3w")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 rotation_edit_mode = 1
-shape = SubResource("CylinderShape3D_s725m")
+shape = SubResource("BoxShape3D_1lfvr")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

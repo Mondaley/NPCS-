@@ -12,7 +12,3 @@ script = ExtResource("1_gn6qc")
 [node name="Rooms" type="Node3D" parent="."]
 
 [node name="Rooms" type="Node3D" parent="Rooms"]
-
-[node name="Borders" type="Node3D" parent="Rooms"]
-
-[node name="Empty" type="Node3D" parent="Rooms"]

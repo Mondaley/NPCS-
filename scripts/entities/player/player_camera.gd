@@ -4,7 +4,6 @@ extends Node3D
 @onready var n_camera = $Neck/Camera
 @onready var n_mesh = owner.get_node("Mesh")
 
-var _v3_initial_pos := position
 var nr_angular_multiplier := 0.005
 var b_mouse_captured := true
 

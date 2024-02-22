@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dy2chvgxscgm4"]
+
+[ext_resource type="Script" path="res://scripts/places/world.gd" id="1_kewoa"]
+[ext_resource type="PackedScene" uid="uid://dm4i7qu3tf6ly" path="res://scenes/environment/building/plane.tscn" id="2_kfgoh"]
+[ext_resource type="PackedScene" uid="uid://dmmlqmef2ha8x" path="res://scenes/entities/player/player.tscn" id="2_xd6gm"]
+[ext_resource type="PackedScene" uid="uid://dhhaa3ufjpe76" path="res://scenes/environment/building/plane_large_door.tscn" id="4_42x80"]
+[ext_resource type="PackedScene" uid="uid://byip2ppuktf33" path="res://scenes/environment/building/room_generator.tscn" id="5_qh7js"]
+[ext_resource type="PackedScene" uid="uid://sy76jn0ifay2" path="res://scenes/environment/building/large_door.tscn" id="5_t7jiv"]
+[ext_resource type="PackedScene" uid="uid://c11hipnejdugd" path="res://scenes/environment/building/room.tscn" id="6_tq1cq"]
+
+[sub_resource type="Environment" id="Environment_6fqb1"]
+
+[node name="world" type="Node3D" node_paths=PackedStringArray("n_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00291395, 0.00603902, 0.000326633)
+script = ExtResource("1_kewoa")
+n_player = NodePath("entities/Player")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6fqb1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99829, 0.995866, 4.60286)
+light_color = Color(0.384314, 1, 1, 1)
+omni_range = 2.14441
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Building" type="Node3D" parent="Environment"]
+
+[node name="Floor" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
+
+[node name="Floor2" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="Floor3" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="Floor4" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Floor5" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Floor6" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
+
+[node name="large_door" parent="Environment/Building" instance=ExtResource("5_t7jiv")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -7, 0, 4)
+
+[node name="Plane_Large-door" parent="Environment/Building" instance=ExtResource("4_42x80")]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -7, 1, 4)
+
+[node name="Room_Generator" parent="Environment" instance=ExtResource("5_qh7js")]
+transform = Transform3D(0.999994, 0.00242845, 0.00246847, -0.00242624, 0.999997, -0.000903401, -0.00247065, 0.000897428, 0.999996, 0, -3, 0)
+b_debug_mode = true
+b_generate_borders = true
+b_fill_empty = true
+n_room_tile = ExtResource("6_tq1cq")
+amount_g_max_steps = 100
+b_automatic_branch_number = false
+
+[node name="entities" type="Node3D" parent="."]
+
+[node name="Player" parent="entities" instance=ExtResource("2_xd6gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.12254, 0)
+b_debug_mode = true
+amount_g_movement_speed = 20.0

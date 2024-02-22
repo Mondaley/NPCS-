@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c11hipnejdugd"]
+[gd_scene load_steps=3 format=3 uid="uid://c11hipnejdugd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfqj4"]
+size = Vector3(1, 0.01, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ctxss"]
 size = Vector2(1, 1)
 
-[node name="Room" type="Node3D"]
+[node name="Room" type="StaticBody3D"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_qfqj4")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00828207, 0.00371802, 0.00985637)
 mesh = SubResource("PlaneMesh_ctxss")
 
 [node name="Count" type="Label3D" parent="."]
