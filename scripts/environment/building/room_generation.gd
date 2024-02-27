@@ -1,4 +1,4 @@
-extends Node3D
+extends GridMap
 
 @export_category("Debug")
 @export var b_debug_mode : bool = false
@@ -226,6 +226,7 @@ func do_room():
 	if b_debug_mode: print(amount_steps, ' step-----------------------------------------------')	
 	arr_dungeon_grid[v3_position.x][v3_position.z] = true
 	var _n_instance = n_room_tile.instantiate()
+	set_cell_item(Vector3(v3_position.x, 0, v3_position.z), 0)
 	mat_material.albedo_color = clr_color
 	_n_instance.transform.origin = Vector3(v3_position.x, 0, v3_position.z)
 	_n_instance.name = str(amount_steps)

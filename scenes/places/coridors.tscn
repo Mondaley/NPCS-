@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://dy2chvgxscgm4"]
 
 [ext_resource type="Script" path="res://scripts/places/world.gd" id="1_kewoa"]
-[ext_resource type="PackedScene" uid="uid://dm4i7qu3tf6ly" path="res://scenes/environment/building/plane.tscn" id="2_kfgoh"]
 [ext_resource type="PackedScene" uid="uid://dmmlqmef2ha8x" path="res://scenes/entities/player/player.tscn" id="2_xd6gm"]
-[ext_resource type="PackedScene" uid="uid://dhhaa3ufjpe76" path="res://scenes/environment/building/plane_large_door.tscn" id="4_42x80"]
+[ext_resource type="MeshLibrary" uid="uid://beo3brpk0gmey" path="res://scenes/environment/building/library_2.tres" id="4_bw05b"]
 [ext_resource type="PackedScene" uid="uid://byip2ppuktf33" path="res://scenes/environment/building/room_generator.tscn" id="5_qh7js"]
 [ext_resource type="PackedScene" uid="uid://sy76jn0ifay2" path="res://scenes/environment/building/large_door.tscn" id="5_t7jiv"]
 [ext_resource type="PackedScene" uid="uid://c11hipnejdugd" path="res://scenes/environment/building/room.tscn" id="6_tq1cq"]
-[ext_resource type="MeshLibrary" uid="uid://b4544ekdcotbl" path="res://scenes/environment/building/furniture_house.tres" id="8_0b5h6"]
+[ext_resource type="PackedScene" uid="uid://yhbkyqcrbm2d" path="res://scenes/environment/building/Rooms.blend" id="7_ctisx"]
+[ext_resource type="MeshLibrary" uid="uid://b4544ekdcotbl" path="res://scenes/environment/building/library_1.tres" id="8_0b5h6"]
 
 [sub_resource type="Environment" id="Environment_6fqb1"]
 
@@ -28,49 +28,35 @@ omni_range = 2.14441
 
 [node name="Building" type="Node3D" parent="Environment"]
 
-[node name="Floor" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
-
-[node name="Floor2" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
-
-[node name="Floor3" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97794, 2.38419e-07, 3.99786)
-
-[node name="Floor4" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.51295e-05, 4)
-
-[node name="Floor5" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96756, 0.00210178, 4.00432)
-
-[node name="Floor6" parent="Environment/Building" instance=ExtResource("2_kfgoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96602, 0, 4.02657)
-
 [node name="large_door" parent="Environment/Building" instance=ExtResource("5_t7jiv")]
 transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -7, 0, 4)
 
-[node name="Plane_Large-door" parent="Environment/Building" instance=ExtResource("4_42x80")]
-transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -7, 1, 4)
-
 [node name="Room_Generator" parent="Environment" instance=ExtResource("5_qh7js")]
-transform = Transform3D(0.999994, 0.00242845, 0.00246847, -0.00242624, 0.999997, -0.000903401, -0.00247065, 0.000897428, 0.999996, 0, -3, 0)
+transform = Transform3D(0.996799, 0.00242069, 0.00246058, -0.00241849, 0.996802, -0.000900515, -0.00246276, 0.000894561, 0.996801, 0, 0, 0)
+mesh_library = ExtResource("4_bw05b")
+cell_size = Vector3(4, 2, 4)
+cell_center_y = false
 b_generate_borders = true
 n_room_tile = ExtResource("6_tq1cq")
+amount_grid_multiplier = 2
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="entities" type="Node3D" parent="."]
 
 [node name="Player" parent="entities" instance=ExtResource("2_xd6gm")]
-<<<<<<< HEAD
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.12254, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0.75, 2.13003)
+b_debug_mode = true
+amount_g_movement_speed = 5.0
 amount_jump_height = 3.0
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("8_0b5h6")
 cell_size = Vector3(1, 1, 1)
+cell_center_y = false
 data = {
 "cells": PackedInt32Array(0, 4, 917538, 0, 3, 917538, 65535, 3, 917538, 65535, 4, 917538, 65535, 2, 655503, 0, 2, 655503)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
-=======
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4655, 3.83809, 3.67106)
->>>>>>> 640536c7f5b371ce4a164e9cf707a3f488fdc7d2
+
+[node name="Rooms" parent="." instance=ExtResource("7_ctisx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50291, -0.0128993, 2.74967)
